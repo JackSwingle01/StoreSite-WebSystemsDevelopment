@@ -1,0 +1,33 @@
+﻿@model InfoViewModel
+
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="~/ColorTest.vGreenbackground.css">
+        <title>Majari Pizza</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <!--img src="../wwwroot/Images/Napolean.jfif" width="250"-->
+        <img src="/Images/piccante.jpg" width="220">
+        <!--img src="../wwwroot/Images/Squid.jfif" width="290"-->
+        <h1 style="width:120%">All our pizzas are hand-tossed and oven baked.<br> We have all kinds of pizza:</h1>
+        <ul>
+            <li>Napolean Pizza</li>
+            <li>Piccante</li>
+            <li>Mamma Mia</li>
+            <li>Calamari Pizza</li>
+        </ul>
+        <div>
+            <img src="../Images/pizza.jpg" width="400">
+        </div>
+        
+        <a class="btn btn-primary"
+           asp-controller="Product" asp-action="List"
+           asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+            Continue Shopping
+        </a>
+    </body>
+
+</html>

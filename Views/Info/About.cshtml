@@ -1,0 +1,37 @@
+﻿
+@model InfoViewModel
+
+
+<html>
+<head>
+    <title>About Us</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../ColorTest.vGreenbackground.css">
+</head>
+<body>
+    <div>
+        <img src="../Images/Clocktower.jpg" width="200">
+        <img src="../Images/Chariot.2.jpg" width="200">
+        <img src="../Images/Shoreline.jpg" width="200">
+    </div>
+    
+    
+    <h1>Inspired by family chefs from Gaeta Italy</h1>
+
+    <p>
+        Taking lessons from the cooking styles of the hard working pizza chefs of this humble and ancient town.<br> We believe in getting our hands dirty and putting the human spirit back in making authentic pizza.<br> The key is hand tossing the pizza and oven baking our pizzas in our brick ovens.
+    </p>
+
+    <div>
+        <img src="../Images/jacksonville.2.jpeg" width="400">
+    </div>
+    
+    <a class="btn btn-primary"
+       asp-controller="Product" asp-action="List"
+       asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+        Continue Shopping
+    </a>
+</body>
+
+
+</html>

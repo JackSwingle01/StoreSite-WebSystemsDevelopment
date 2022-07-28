@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" asp-href-include="lib/font-awesome/css/*.css" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/bootstrap.css">
+
+    <title>Majari's Pizza'</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse bg-info justify-content-between ">
+        <a class="navbar-brand text-white" href="#">Majari's Pizza
+        <img src="../Images/PizzaIcon.jpg" width="100"></a>
+        <div class="float-right">
+            <div>
+                <a class="btn btn-sm btn-dark"
+                   asp-controller="Info" asp-action="Index"
+                   asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+                    Home
+                </a>
+                <a class="btn btn-sm btn-dark"
+                   asp-controller="Info" asp-action="About"
+                   asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+                    About
+                </a>
+
+                <a class="btn btn-sm btn-dark"
+                   asp-controller="Info" asp-action="Contact"
+                   asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+                    Contact Us
+                </a>
+            </div>
+
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+           
+            <div class="col col-md-3">
+
+                @await Component.InvokeAsync("NavigationMenu")
+            </div>
+            <div class="col col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>
